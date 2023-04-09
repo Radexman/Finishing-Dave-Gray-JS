@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#view1 {
+    padding: 30px;
+    background-color: darkgray;
+
+}
+
+#view2 {
+    padding: 40px;
+    background-color: blue;
+}
+
+#view3 {
+    padding: 50px;
+    background-color: black;
+}
+
+h2 {
+    color: #fff;
+}
