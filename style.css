@@ -4,15 +4,16 @@
     box-sizing: border-box;
 }
 
+input, button {
+    font: inherit;
+}
+
 #view1 {
     padding: 30px;
-    background-color: darkgray;
-
 }
 
 #view2 {
     padding: 40px;
-    background-color: blue;
 }
 
 #view3 {
@@ -22,4 +23,28 @@
 
 h2 {
     color: #fff;
+}
+
+.darkblue {
+    background-color: darkblue;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.black {
+    background-color: black;
+}
+
+.navbar {
+    padding: 10px 30px;
+    color: #fff;
+    background-color: chartreuse;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.height100 {
+    height: 100px;
 }
