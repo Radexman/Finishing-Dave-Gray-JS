@@ -1,53 +1,20 @@
-// JavaScript Event Listeners
+// Web Storage API
 
-// Syntax: addEventListener(event, function, useCapture)
+// Not part of the DOM - refers to the Window API
+// Avialable to JS via global variable: window
 
-document.addEventListener('readystatechange', (e) => {
-	if (e.target.readyState === 'complete') {
-		console.log('readyState: complete');
-		initApp();
-	}
-});
+// We do not have to type window. It is implied:
 
-const initApp = () => {
-	const viewOne = document.querySelector('#view1');
-	const viewTwo = document.querySelector('#view2');
-	const viewThree = document.querySelector('#view3');
-	const h2 = document.querySelector('h2');
-	const nav = document.querySelector('.navbar');
-	const myForm = document.querySelector('.form');
-	const textInput = document.querySelector('#text-input');
-
-	viewOne.addEventListener('click', (e) => {
-		viewOne.classList.toggle('darkblue');
-		viewOne.classList.toggle('purple');
-	});
-
-	viewTwo.addEventListener('click', (e) => {
-		e.target.classList.toggle('black');
-		e.target.classList.toggle('purple');
-	});
-
-	viewThree.addEventListener('click', (e) => {
-		e.target.style.backgroundColor = 'purple';
-	});
-
-	h2.addEventListener('click', (e) => {
-		const myText = e.target.textContent;
-		myText === 'My 2nd view' ? (e.target.textContent = 'Clicked') : (e.target.textContent = 'My 2nd view');
-	});
-
-	nav.addEventListener('mouseover', (e) => {
-		e.target.classList.add('height100');
-	});
-
-	nav.addEventListener('mouseout', (e) => {
-		e.target.classList.remove('height100');
-	});
-
-	myForm.addEventListener('submit', (e) => {
-		e.preventDefault();
-		console.log(textInput.value);
-		console.log('Form submitted');
-	});
+const myArray = ['eat', 'sleep', 'code'];
+const myObject = {
+	name: 'Emilia',
+	hobbies: ['eat', 'sleep', 'code'],
+	logName: function () {
+		console.log(`Hi, my name is ${this.name}.`);
+	},
 };
+
+localStorage.setItem('myLocalStore', JSON.stringify(myArray));
+const key = localStorage.key(0);
+const myLocalData = JSON.parse(localStorage.getItem('myLocalStore'));
+console.log(key);
