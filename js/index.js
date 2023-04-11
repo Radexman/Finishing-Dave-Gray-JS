@@ -1,28 +1,16 @@
-// Higher Order Functions
+// Fetch API requires a discussion of...
+// Callbacks, Promises, Thenables and Async/Await
 
-// A higher order functions is a function that does at least
-// one of the following
-// ** Tasks one or more functions as an argument (parameter)
-// ** Returns a function as the result
+// Promises
 
-import { posts } from './posts.js';
+// 3 states: Pending, Resolved, Rejected
 
-posts.forEach((post) => {
-	console.log(post);
+const myPromise = new Promise((resolve, reject) => {
+	const error = false;
+
+	if (!error) {
+		resolve('Yes! Resolved the promise');
+	} else {
+		reject('No! Rejected the promise');
+	}
 });
-
-console.clear();
-
-const filteredPosts = posts.filter((post) => {
-	return post.id < 5;
-});
-
-console.log(filteredPosts);
-
-const mapped = filteredPosts.map((post) => post.id * 15);
-
-console.log(mapped);
-
-const reducedPosts = mapped.reduce((acc, post) => acc + post);
-
-console.log(reducedPosts);
