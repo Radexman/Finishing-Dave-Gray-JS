@@ -15,6 +15,8 @@ const initApp = () => {
 	const viewThree = document.querySelector('#view3');
 	const h2 = document.querySelector('h2');
 	const nav = document.querySelector('.navbar');
+	const myForm = document.querySelector('.form');
+	const textInput = document.querySelector('#text-input');
 
 	viewOne.addEventListener('click', (e) => {
 		viewOne.classList.toggle('darkblue');
@@ -41,5 +43,11 @@ const initApp = () => {
 
 	nav.addEventListener('mouseout', (e) => {
 		e.target.classList.remove('height100');
+	});
+
+	myForm.addEventListener('submit', (e) => {
+		e.preventDefault();
+		console.log(textInput.value);
+		console.log('Form submitted');
 	});
 };
