@@ -6,7 +6,7 @@
 // 3 steps: Pending, Resolve, Reject
 
 const promise = new Promise((resolve, reject) => {
-	let error = false;
+	let error = true;
 
 	if (!error) {
 		resolve('Success: Task compleated.');
@@ -15,6 +15,16 @@ const promise = new Promise((resolve, reject) => {
 	}
 });
 
-console.log(promise);
+const myNextPromise = new Promise((resolve, reject) => {
+	setTimeout(() => {
+		const error = false;
 
-promise.then((res) => res + 1).then((res) => console.log(res));
+		if (!error) {
+			resolve('Sucess!');
+		} else {
+			reject('Failure!');
+		}
+	}, 1500);
+});
+
+myNextPromise.then((res) => console.log(res)).catch((error) => console.log(error));
