@@ -1,16 +1,20 @@
-// Fetch API requires a discussion of...
+// Fetch API requires a discussion of..
 // Callbacks, Promises, Thenables and Async/Await
 
 // Promises
 
-// 3 states: Pending, Resolved, Rejected
+// 3 steps: Pending, Resolve, Reject
 
-const myPromise = new Promise((resolve, reject) => {
-	const error = false;
+const promise = new Promise((resolve, reject) => {
+	let error = false;
 
 	if (!error) {
-		resolve('Yes! Resolved the promise');
+		resolve('Success: Task compleated.');
 	} else {
-		reject('No! Rejected the promise');
+		reject('Error: Something went wrong.');
 	}
 });
+
+console.log(promise);
+
+promise.then((res) => res + 1).then((res) => console.log(res));
