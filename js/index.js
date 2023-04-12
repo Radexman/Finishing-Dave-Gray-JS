@@ -9,12 +9,11 @@ const getAllUserEmails = async () => {
 
 	const userEmailArray = jsonData.map((user) => user.email);
 
-	return userEmailArray;
+	renderUserEmails(userEmailArray);
 };
 
-const renderUserEmails = async () => {
-	const emails = await getAllUserEmails();
-	emails.forEach((email) => {
+const renderUserEmails = (data) => {
+	data.forEach((email) => {
 		const p = document.createElement('p');
 		p.classList.add('text-style');
 		const pText = document.createTextNode(email);
@@ -24,4 +23,4 @@ const renderUserEmails = async () => {
 	});
 };
 
-renderUserEmails();
+getAllUserEmails();
