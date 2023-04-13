@@ -61,3 +61,9 @@ p {
     margin: 15px;
     border-radius: 3px;
 }
+
+.form-control {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 500px;
+}
